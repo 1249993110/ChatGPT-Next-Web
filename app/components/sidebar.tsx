@@ -254,7 +254,7 @@ export function SideBar(props: { className?: string }) {
     >
       <SideBarHeader
         title="EAIL"
-        subTitle="华南理工大学"
+        subTitle="华南理工大学环境与能源学院"
         sub2Title="环境人工智能实验室"
         logo={<ChatGptIcon />}
         shouldNarrow={shouldNarrow}
