@@ -172,11 +172,12 @@ export function SideBarContainer(props: {
 export function SideBarHeader(props: {
   title?: string | React.ReactNode;
   subTitle?: string | React.ReactNode;
+  sub2Title?: string | React.ReactNode;
   logo?: React.ReactNode;
   children?: React.ReactNode;
   shouldNarrow?: boolean;
 }) {
-  const { title, subTitle, logo, children, shouldNarrow } = props;
+  const { title, subTitle, sub2Title, logo, children, shouldNarrow } = props;
   return (
     <Fragment>
       <div
@@ -190,6 +191,7 @@ export function SideBarHeader(props: {
             {title}
           </div>
           <div className={styles["sidebar-sub-title"]}>{subTitle}</div>
+          <div className={styles["sidebar-sub-title"]}>{sub2Title}</div>
         </div>
         {/* <div className={clsx(styles["sidebar-logo"], "no-dark")}>{logo}</div> */}
         <Image src={logoIcon} alt="Logo" width={50} height={50} />
@@ -252,7 +254,8 @@ export function SideBar(props: { className?: string }) {
     >
       <SideBarHeader
         title="EAIL"
-        subTitle="环境人工智能实验室"
+        subTitle="华南理工大学"
+        sub2Title="环境人工智能实验室"
         logo={<ChatGptIcon />}
         shouldNarrow={shouldNarrow}
       >
