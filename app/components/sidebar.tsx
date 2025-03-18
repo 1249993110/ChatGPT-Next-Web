@@ -4,7 +4,6 @@ import styles from "./home.module.scss";
 
 import { IconButton } from "./button";
 import SettingsIcon from "../icons/settings.svg";
-import GithubIcon from "../icons/github.svg";
 import ChatGptIcon from "../icons/chatgpt.svg";
 import AddIcon from "../icons/add.svg";
 import DeleteIcon from "../icons/delete.svg";
@@ -23,12 +22,13 @@ import {
   MIN_SIDEBAR_WIDTH,
   NARROW_SIDEBAR_WIDTH,
   Path,
-  REPO_URL,
 } from "../constant";
 
 import { Link, useNavigate } from "react-router-dom";
 import { isIOS, useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
+import Image from "next/image";
+import logoIcon from "../icons/logo.png";
 import { Selector, showConfirm } from "./ui-lib";
 import clsx from "clsx";
 import { isMcpEnabled } from "../mcp/actions";
@@ -191,7 +191,8 @@ export function SideBarHeader(props: {
           </div>
           <div className={styles["sidebar-sub-title"]}>{subTitle}</div>
         </div>
-        <div className={clsx(styles["sidebar-logo"], "no-dark")}>{logo}</div>
+        {/* <div className={clsx(styles["sidebar-logo"], "no-dark")}>{logo}</div> */}
+        <Image src={logoIcon} alt="Logo" width={50} height={50} />
       </div>
       {children}
     </Fragment>
@@ -250,8 +251,8 @@ export function SideBar(props: { className?: string }) {
       {...props}
     >
       <SideBarHeader
-        title="NextChat"
-        subTitle="Build your own AI assistant."
+        title="EAIL"
+        subTitle="环境人工智能实验室"
         logo={<ChatGptIcon />}
         shouldNarrow={shouldNarrow}
       >
@@ -336,7 +337,7 @@ export function SideBar(props: { className?: string }) {
                 />
               </Link>
             </div>
-            <div className={styles["sidebar-action"]}>
+            {/* <div className={styles["sidebar-action"]}>
               <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
                 <IconButton
                   aria={Locale.Export.MessageFromChatGPT}
@@ -344,7 +345,7 @@ export function SideBar(props: { className?: string }) {
                   shadow
                 />
               </a>
-            </div>
+            </div> */}
           </>
         }
         secondaryAction={
