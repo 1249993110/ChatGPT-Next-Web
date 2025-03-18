@@ -28,7 +28,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { isIOS, useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import logoIcon from "../icons/logo.png";
+import LogoIcon from "../icons/logo.png";
 import { Selector, showConfirm } from "./ui-lib";
 import clsx from "clsx";
 import { isMcpEnabled } from "../mcp/actions";
@@ -194,7 +194,7 @@ export function SideBarHeader(props: {
           <div className={styles["sidebar-sub-title"]}>{sub2Title}</div>
         </div>
         {/* <div className={clsx(styles["sidebar-logo"], "no-dark")}>{logo}</div> */}
-        <Image src={logoIcon} alt="Logo" width={50} height={50} />
+        <Image src={LogoIcon} alt="Logo" width={50} height={50} />
       </div>
       {children}
     </Fragment>
